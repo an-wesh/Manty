@@ -8,11 +8,6 @@
     }
   },
   "env": {
-    "OPENAI_API_KEY": "@openai-api-key",
-    "PINECONE_API_KEY": "@pinecone-api-key",
-    "CLOUDINARY_CLOUD_NAME": "@cloudinary-cloud-name",
-    "CLOUDINARY_API_KEY": "@cloudinary-api-key",
-    "CLOUDINARY_API_SECRET": "@cloudinary-api-secret"
   },
   "rewrites": [
     {
