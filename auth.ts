@@ -1,9 +1,10 @@
+// src/lib/auth.ts
 import { NextAuthOptions } from "next-auth";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import InstagramProvider from "next-auth/providers/instagram";
 import FacebookProvider from "next-auth/providers/facebook";
 import GoogleProvider from "next-auth/providers/google";
-import { prisma } from "./db";
+import { prisma } from "@/lib/db";
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
@@ -38,7 +39,9 @@ export const authOptions: NextAuthOptions = {
   ],
   callbacks: {
     async session({ session, user }) {
-      session.user.id = user.id;
+      if (session.user && user) {
+        session.user.id = user.id;
+      }
       return session;
     },
     async jwt({ token, account }) {

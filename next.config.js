@@ -1,15 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
   images: {
     domains: [
       'res.cloudinary.com',
       's3.amazonaws.com',
       'graph.facebook.com',
       'i.ytimg.com',
-      'p16-sign-va.tiktokcdn.com'
+      'p16-sign-va.tiktokcdn.com',
     ],
   },
   env: {
